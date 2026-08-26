@@ -1,3 +1,4 @@
+# re-enable schedule
 name: Send Douyin Messages
 
 on:
