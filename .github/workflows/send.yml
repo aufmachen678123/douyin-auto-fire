@@ -1,4 +1,4 @@
-# re-enable schedule
+# 每天北京时间 09:00 自动发送
 name: Send Douyin Messages
 
 on:
@@ -9,7 +9,7 @@ on:
         type: boolean
         default: false
   schedule:
-    - cron: "00 13 * * *"
+    - cron: "00 9 * * *"
       timezone: "Asia/Shanghai"
 
 concurrency:
