@@ -1,0 +1,12 @@
+name: Schedule Smoke Test
+
+on:
+  schedule:
+    - cron: "53 22 * * *"
+      timezone: "Asia/Shanghai"
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "schedule event fired"
