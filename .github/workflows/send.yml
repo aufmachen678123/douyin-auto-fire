@@ -9,7 +9,7 @@ on:
         type: boolean
         default: false
   schedule:
-    - cron: "30 1 * * *"
+    - cron: "5 2 * * *"
 
 concurrency:
   group: douyin-daily-sender
