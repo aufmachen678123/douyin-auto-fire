@@ -9,7 +9,8 @@ on:
         type: boolean
         default: false
   schedule:
-    - cron: "30 15 * * *"
+    - cron: "30 8 * * *"
+      timezone: "Asia/Shanghai"
 
 concurrency:
   group: douyin-daily-sender
@@ -107,7 +108,12 @@ jobs:
           PY
       - name: Run
         shell: bash
-        run: python run.py --dry-run
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" && "${{ github.event.inputs.dry_run }}" == "true" ]]; then
+            python run.py --dry-run
+          else
+            python run.py
+          fi
       - name: Upload diagnostics
         if: failure()
         uses: actions/upload-artifact@v4
