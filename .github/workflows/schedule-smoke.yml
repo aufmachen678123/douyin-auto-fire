@@ -2,7 +2,7 @@ name: Schedule Smoke Test
 
 on:
   schedule:
-    - cron: "53 22 * * *"
+    - cron: "58 22 * * *"
       timezone: "Asia/Shanghai"
 
 jobs:
